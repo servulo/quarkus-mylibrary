@@ -1,39 +1,31 @@
 package br.com.sprj.library.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class BookDTO {
 
-	private String bookId;
+	private Long bookId;
+
+	@NotBlank(message = "ISBN may not be blank")
+	@Size(min = 13, max = 13, message = "ISBN should have 13 characters")
+	private String bookIsbn;
+
+	@NotBlank(message = "Title may not be blank")
+	@Size(min = 10, message = "Title should have at least 10 characters")
 	private String bookTitle;
+
+	@NotBlank(message = "Subtitle may not be blank")
+	@Size(min = 10, message = "Subtitle should have at least 10 characters")
 	private String bookSubTitle;
-
-	public BookDTO(String bookId, String bookTitle, String bookSubTitle) {
-		this.bookId = bookId;
-		this.bookTitle = bookTitle;
-		this.bookSubTitle = bookSubTitle;
-	}
-
-	public String getBookId() {
-		return bookId;
-	}
-
-	public void setBookId(String bookId) {
-		this.bookId = bookId;
-	}
-
-	public String getBookTitle() {
-		return bookTitle;
-	}
-
-	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
-	}
-
-	public String getBookSubTitle() {
-		return bookSubTitle;
-	}
-
-	public void setBookSubTitle(String bookSubTitle) {
-		this.bookSubTitle = bookSubTitle;
-	}
 
 }

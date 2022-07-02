@@ -1,2 +1,2 @@
-INSERT INTO Book(id, title, subtitle) VALUES (1, "Book One", "The First Book"); 
-INSERT INTO Book(id, title, subtitle) VALUES (2, "Book Two", "The Second Book");
+INSERT INTO Book(id, isbn, title, subtitle) VALUES (1, "0000000000001", "The Book One", "The First Book"); 
+INSERT INTO Book(id, isbn, title, subtitle) VALUES (2, "0000000000002", "The Book Two", "The Second Book");

@@ -7,5 +7,9 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 @ApplicationScoped
 public class BookRepository implements PanacheRepository<Book> {
-	
+
+	public Book findByIsbn(String isbn) {
+		return find("isbn", isbn).firstResult();
+	}
+
 }
